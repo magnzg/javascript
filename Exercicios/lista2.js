@@ -47,7 +47,7 @@ console.log(nome)
 let num = 6
 
 let num1 = num % 3
-let num2 = num % 2
+let num2 = num % 5
 
 let total = num1 == 0
 let total1 = num2 == 0
@@ -61,7 +61,7 @@ console.log(total1)
 let saldo = 100000000000
 let saque = 1000
 
-let integral = saque > saldo
+let integral = saldo > saque
 
 let integral1 = saldo - saque
 let verificacao1 = integral1 > 100

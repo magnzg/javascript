@@ -21,7 +21,7 @@ let altura = 5
 
 let area = largura * altura
 
-console.log("--------------------------------------------------------")
+console.log("ㅤ")
 console.log("Exercício 2")
 console.log(area)
 
@@ -31,7 +31,7 @@ let numero = 6
 let dobro = numero * 2
 let metade = numero / 2
 
-console.log("--------------------------------------------------------")
+console.log("ㅤ")
 console.log("Exercício 3")
 console.log(dobro)
 console.log(metade)
@@ -43,7 +43,7 @@ let num3 = 5
 
 let media = (num + num2 + num3) / 3
 
-console.log("--------------------------------------------------------")
+console.log("ㅤ")
 console.log("Exercício 4")
 console.log(media)
 
@@ -52,6 +52,6 @@ let celsius = 35
 
 let fahrenheit = (celsius * 9/5) + 32
 
-console.log("--------------------------------------------------------")
+console.log("ㅤ")
 console.log("Exercício 5")
 console.log(fahrenheit)
