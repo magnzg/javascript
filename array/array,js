@@ -1,0 +1,3 @@
+let amigos = ["Carlos", "Joana", "Marcos", "Barbara", "Luana"]
+
+console.log(amigos[0])
