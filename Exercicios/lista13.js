@@ -1,24 +1,27 @@
-console.log("atv.1---------------------------------------------")
+console.log("Atividade 1")
 let paragrafo = document.getElementById("paragrafo")
 let botaoParagrafo = document.getElementById("botaoParagrafo")
 
 botaoParagrafo.addEventListener("click", function () {
     paragrafo.style.color = "#8da9ff"
 })
+console.log("ㅤ")
 
-console.log("atv.2---------------------------------------------")
+console.log("Atividade 2")
 let mudaCor = document.getElementById("mudaCor")
 mudaCor.addEventListener("click", function () {
     mudaCor.style.backgroundColor = "#8da9ff"
 })
+console.log("ㅤ")
 
-console.log("atv.3---------------------------------------------")
+console.log("Atividade 3")
 let duplo = document.getElementById("duplo")
 duplo.addEventListener("dblclick", function () {
     duplo.style.fontSize = "20px"
 })
+console.log("ㅤ")
 
-console.log("atv.4---------------------------------------------")
+console.log("Atividade 4")
 let passe= document.getElementById("passe")
 passe.addEventListener("mouseover", function () {
     passe.innerText = "O mouse esta aqui"
@@ -28,8 +31,9 @@ passe.addEventListener("mouseout", function () {
     passe.innerText = "Passe o mouse aqui"
     passe.style.backgroundColor = "white"
 })
+console.log("ㅤ")
 
-console.log("atv.5---------------------------------------------")
+console.log("Atividade 5")
 let jinx1 = document.getElementById("jinx1")
 let imgjinx = document.getElementById("imgjinx")
 
@@ -37,8 +41,9 @@ jinx1.addEventListener("click", function () {
     imgjinx.style.height = "200px"
     imgjinx.style.width = "200px"
 })
+console.log("ㅤ")
 
-console.log("atv.6---------------------------------------------")
+console.log("Atividade 6")
 let jinx2= document.getElementById("jinx2")
 let imgjinx2= document.getElementById("imgjinx2")
 
@@ -47,8 +52,9 @@ jinx2.addEventListener("click", function () {
     imgjinx2.style.width = "200px"
     imgjinx2.style.borderRadius = "100%"
 })
+console.log("ㅤ")
 
-console.log("atv.7---------------------------------------------")
+console.log("Atividade 7")
 let parag1= document.getElementById("parag1")
 let botaoParag1= document.getElementById("botaoParag1")
 
@@ -75,3 +81,4 @@ botaoParag3.addEventListener("click", function () {
     parag3.style.fontSize = "20px"
     parag3.style.borderRadius = "20px"  
 })
+console.log("ㅤ")
