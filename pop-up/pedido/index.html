@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background: linear-gradient(rgb(252, 204, 114), rgb(246, 177, 48));
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+        }
+        .btn{
+            background-color: black;
+            font: 300 30px "Ariel";
+            padding: 15px 30px;
+            border-radius: 15px;
+            border: none;
+            color: white;
+            transition: ease-in-out 0.4s;
+            width: 200px;
+        }
+        .tituloPrincipal{
+            font: 700 40px "Arial";
+        }
+        .titulo{
+            text-align: center;
+            margin: 20px 0 80px;
+        }
+        .botoes{
+            display: flex;
+            justify-content: space-between;
+            margin: 0 200px;
+        }
+    </style>
+</head>
+<body>
+    <div class="titulo">
+        <h1 class="tituloPrincipal">Porque você não namora comigo?</h1>
+    </div>
+<div class="botoes">
+    <div class="botaoS">
+        <button class="btn" onclick="sim()">SIM</button>
+    </div>
+    <div class="botaoN">
+        <button class="btn" id="btn" onclick="desvia()" onmouseover="desvia()">NÂO</button>
+    </div>
+</div>
+<script>
+    function sim() {
+            window.location.href = "https://youtu.be/Kn-kB20ByKQ"
+        }
+        function desvia() {
+            let btn = document.getElementById("btn")
+            btn.style.position = "absolute"
+            btn.style.bottom = geraPosicao(10,80)
+            btn.style.left = geraPosicao(10,80)
+        }
+        function geraPosicao(min, max) {
+            return (Math.random() * (max - min)+ min) + "%"
+        }
+</script>
+</body>
+</html>
