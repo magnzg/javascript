@@ -13,9 +13,8 @@
     flex-direction: column;
     align-items: center;
     background-image: url('fundotlou.webp');
-    background-attachment: fixed;
     background-repeat: no-repeat;
-    background-size: 100%;
+    background-size: cover;
     background-position: center;
   }
 
