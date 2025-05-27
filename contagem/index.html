@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Contagem Regressiva para o Natal</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1 id="titulo">Contagem Regressiva para o Natal</h1>
+    <h1>25/12/2025</h1>
+    <div id="contador"></div>
+    
+    <div id="barraProgresso">
+        <div id="barraProgressoPreenchida"></div>
+    </div>
+
+    <div id="mensagemFinal"></div>
+    
+    <audio id="somFim" src="somnatal.mp3"></audio>
+
+    <img src="laco.png" class="decor canto-esquerdo-topo">
+    <img src="toca.png" class="decor canto-direito-topo">
+    <img src="arvore.png" class="decor canto-esquerdo-baixo">
+    <img src="presente.png" class="decor canto-direito-baixo">
+
+    <script>
+        const agora = new Date()
+        
+        const dataAlvo = new Date(2025, 1, 25)
+        const tempoTotal = dataAlvo - agora
+
+        const contadorEl = document.getElementById("contador")
+        const mensagemFinalEl = document.getElementById("mensagemFinal")
+        const barraProgressoPreenchidaEl = document.getElementById("barraProgressoPreenchida")
+        const somFim = document.getElementById("somFim")
+
+        function preencher(num) {
+            return num < 10 ? '0' + num : num
+        }
+
+        function atualizarContador() {
+            const agora = new Date()
+            const diferenca = dataAlvo - agora
+
+            if (diferenca <= 0) {
+                contadorEl.textContent = "00d 00h 00m 00s"
+                mensagemFinalEl.textContent = "O Natal Chegou!! Boas Festas!🎄🎁"
+                barraProgressoPreenchidaEl.style.width = "100%"
+
+                somFim.play()
+
+                clearInterval(intervalo)
+                return
+            }
+
+            const dias = Math.floor(diferenca / (1000 * 60 * 60 * 24))
+            const horas = Math.floor((diferenca % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60))
+            const minutos = Math.floor((diferenca % (1000 * 60 * 60)) / (1000 * 60))
+            const segundos = Math.floor((diferenca % (1000 * 60)) / 1000)
+
+            contadorEl.textContent = 
+                `${preencher(dias)}d ${preencher(horas)}h ${preencher(minutos)}m ${preencher(segundos)}s`
+
+            const tempoPassado = tempoTotal - diferenca
+            const progressoPercentual = (tempoPassado / tempoTotal) * 100
+            barraProgressoPreenchidaEl.style.width = progressoPercentual + "%"
+        }
+
+        atualizarContador()
+        const intervalo = setInterval(atualizarContador, 1000)
+    </script>
+</body>
+</html>

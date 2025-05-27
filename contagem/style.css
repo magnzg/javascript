@@ -1,0 +1,76 @@
+@font-face {
+    font-family: "fonte";
+    src: url(fonte.ttf);
+}
+body {
+    font-family: "fonte";
+    text-align: center;
+    margin-top: 50px;
+    background-color: #ECDEB9; 
+    color: #226F61; 
+}
+
+#contador {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+#barraProgresso {
+    width: 80%;
+    height: 25px;
+    background-color: #CBAF71; 
+    margin: 0 auto 30px;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: inset 0 0 5px #AD242C; 
+}
+
+#barraProgressoPreenchida {
+    height: 100%;
+    width: 0%;
+    background: linear-gradient(90deg, #AD242C, #CBAF71); 
+    transition: width 1s ease;
+}
+
+#mensagemFinal {
+    font-size: 1.5rem;
+    color: #AD242C; 
+}
+
+.decor {
+    position: absolute;
+    width: 80px;
+    height: auto;
+    z-index: 10;
+    pointer-events: none; /* evita que a imagem atrapalhe cliques */
+    opacity: 0.9;
+}
+
+.canto-esquerdo-topo {
+    top: 0;
+    left: 0;
+    height: 150px;
+    width: auto;
+}
+
+.canto-direito-topo {
+    top: 0;
+    right: 0;
+    height: 150px;
+    width: auto;
+}
+
+.canto-esquerdo-baixo {
+    bottom: 0;
+    left: 0;
+    height: 150px;
+    width: auto;
+}
+
+.canto-direito-baixo {
+    bottom: 0;
+    right: 0;
+    height: 150px;
+    width: auto;
+}
