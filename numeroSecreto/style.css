@@ -1,0 +1,47 @@
+body {
+  font-family: 'Patrick Hand', cursive;
+  background-color: #c29e64;
+  color: #b85b2f;
+  text-align: center;
+  padding: 30px;
+  letter-spacing: 2px;
+}
+
+.container {
+  background-color: #f7e7d9; 
+  padding: 20px;
+  border-radius: 12px;
+  max-width: 500px;
+  margin: auto;
+}
+
+input[type="number"] {
+  padding: 10px;
+  font-size: 16px;
+  width: 100px;
+  border-radius: 12px;
+  border: none;
+}
+
+button {
+  padding: 10px 20px;
+  background-color: #b85b2f;
+  color: white;
+  border: none;
+  border-radius: 20px;
+  font-size: 16px;
+  margin-top: 10px;
+  cursor: pointer;
+  font-family: 'Patrick Hand', cursive;
+  letter-spacing: 2px;
+}
+
+button:disabled {
+  background-color: #aaa;
+  cursor: not-allowed;
+}
+
+.imagem-cesta {
+  margin-top: 20px;
+  width: 300px;
+}

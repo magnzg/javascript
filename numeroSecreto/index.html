@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Número Secreto</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+    <h1>Quantos filhotes tem na cesta?</h1>
+    <p>Chute um número de 1 a 100:</p>
+    
+    <input type="number" id="palpite" min="1" max="100">
+    <br>
+    <button id="botao" onclick="verificarPalpite()">Tentar</button>
+    
+    <p id="mensagem"></p>
+    <p id="tentativas"></p>
+
+    <img id="cesta" src="cestafechada.png" alt="cesta-fechada" class="imagem-cesta">
+    
+    <br>
+    <button onclick="reiniciarJogo()">Reiniciar jogo</button>
+    </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
