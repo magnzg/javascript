@@ -4,22 +4,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h2>Simulador de Caixa</h2>
+    <img src="pata.png" alt="" style="width:40px; vertical-align:middle; margin-right:10px;">
+    <h2>Simulador de Caixa - Pet Shop</h2>
 
     <label>Produto:
         <input type="text" id="produto">
     </label>
-    <br><br>
     <label>Valor (R$)
         <input type="number" id="valor" step="0.01">
     </label>
-    <br><br>
     <label>Quantidade:
         <input type="number" id="quantidade">
     </label>
-    <br><br>
 
     <button onclick="adicionarItem()">Adicionar a compra</button>
     <button onclick="limparTudo()">Limpar tudo</button>
@@ -28,8 +27,23 @@
     <ul id="listarItens"></ul>
 
     <h3>Total: R$ <span id="total">0.00</span></h3>
+    <h3>Desconto: R$ <span id="desconto">0.00</span></h3>
+    <h3>Total com desconto: R$ <span id="totalComDesconto">0.00</span></h3>
+
+    <label>Valor pago (R$):
+        <input type="number" id="valorPago" step="0.01">
+    </label>
+    <button onclick="calcularTroco()">Calcular troco</button>
+    <h3>Troco: R$ <span id="troco">0.00</span></h3>
+
     <script>
-        let total = 0 
+        let total = 0
+        let totalQuantidade = 0
+
+        const imagens = [
+            "pata.png"  
+        ]
+
         function adicionarItem() {
             const produto = document.getElementById("produto").value
             const valor = parseFloat(document.getElementById("valor").value)
@@ -37,17 +51,46 @@
 
             if(!produto || isNaN(valor) || isNaN(quantidade)) {
                 alert("Preencha todos os campos corretamente")
+                return
             }
 
             const subtotal = valor * quantidade
             total += subtotal
+            totalQuantidade += quantidade
+
+            // Escolher imagem com base no nome do produto
+            let imagem
+            
+            const nomeProduto = produto.toLowerCase()
+            
+            if (nomeProduto.includes("ração")) {
+                imagem = "3.png"
+            } else if (nomeProduto.includes("brinquedo")) {
+                imagem = "4.png"
+            } else if (nomeProduto.includes("shampoo")) {
+                imagem = "1.png"
+            } else if (nomeProduto.includes("coleira")) {
+                imagem = "2.png"
+            } else {
+                imagem = imagens[Math.floor(Math.random() * imagens.length)]
+            }
 
             const lista = document.getElementById("listarItens")
             const item = document.createElement("li")
-            item.textContent = `${produto} - R$${valor.toFixed(2)} x ${quantidade} = R$${subtotal.toFixed(2)}`
+
+            item.innerHTML = `<img src="${imagem}" alt="Ícone do produto" style="width:40px; vertical-align:middle; margin-right:10px;"><strong>${produto}</strong> - R$${valor.toFixed(2)} x ${quantidade} = <strong>R$${subtotal.toFixed(2)}</strong>`
             lista.appendChild(item)
 
             document.getElementById("total").textContent = total.toFixed(2)
+
+             let desconto = 0
+             if (totalQuantidade > 3) {
+                desconto = total * 0.10
+            }
+            const totalComDesconto = total - desconto
+
+            document.getElementById("desconto").textContent = desconto.toFixed(2)
+            document.getElementById("totalComDesconto").textContent = totalComDesconto.toFixed(2)
 
             //Limpar campos depois de adicionar um produto
             document.getElementById("produto").value = ""
@@ -58,6 +101,21 @@
             document.getElementById("listarItens").innerHTML = ""
             document.getElementById("total").textContent = "0.00"
             total = 0
+        }
+        function calcularTroco() {
+            const valorPago = parseFloat(document.getElementById("valorPago").value)
+            const totalComDesconto = parseFloat(document.getElementById("totalComDesconto").textContent)
+            
+            if (isNaN(valorPago)) {
+                alert("Informe um valor pago válido.")
+                return
+            }
+            if (valorPago < totalComDesconto) {
+                alert("O valor pago é menor que o total da compra com desconto.")
+                return
+            }
+            const troco = valorPago - totalComDesconto
+            document.getElementById("troco").textContent = troco.toFixed(2)
         }
     </script>
 </body>
