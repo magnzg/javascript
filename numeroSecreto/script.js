@@ -21,7 +21,7 @@ function verificarPalpite() {
   tentativasEl.textContent = "Tentativas: " + historico.join(", ")
 
   if (palpite === numeroSecreto) {
-    mensagem.textContent = `Parabéns! Acertou com ${tentativas} tentativas.`
+    mensagem.textContent = `Parabéns! Tem ${numeroSecreto} filhotes e você acertou em ${tentativas} tentativas.`
     cesta.src = "cestaaberta.png"
     input.disabled = true
     botao.disabled = true
