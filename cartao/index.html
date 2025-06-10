@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cartões Interativos</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="cartoes-container">
+
+    <div class="container">
+        <div class="cartao">
+            <div class="frente">Feliz Aniversário!</div>
+            <div class="verso"></div>
+        </div>
+    </div>
+    <br>
+    
+    <div class="container">
+        <div class="cartao natal">
+            <div class="frente2">Feliz Natal!</div>
+            <div class="verso2"></div>
+        </div>
+    </div>
+    <br>
+
+    <div class="container">
+        <div class="cartao maes">
+            <div class="frente3">Feliz Dia das Mães!</div>
+            <div class="verso3"></div>
+        </div>
+    </div>
+    <br>
+
+    <div class="container">
+        <div class="cartao namorados">
+            <div class="frente4">Feliz Dia dos Namorados!</div>
+            <div class="verso4"></div>
+        </div>
+    </div>
+    <br>
+
+    <div class="container">
+        <div class="cartao anonovo">
+            <div class="frente5">Feliz Ano Novo!</div>
+            <div class="verso5"></div>
+        </div>
+    </div>
+    <br>
+
+    <div class="container">
+        <div class="cartao pascoa">
+            <div class="frente6">Feliz Páscoa!</div>
+            <div class="verso6"></div>
+        </div>
+    </div>
+    <br>
+
+    <div class="container">
+        <div class="cartao professor">
+            <div class="frente7">Feliz Dia do Professor!</div>
+            <div class="verso7">Obrigado por ensinar com dedicação e coração. Feliz Dia do Professor!</div>
+        </div>
+    </div>
+    <br>
+
+    <div class="container">
+        <div class="cartao desculpas">
+            <div class="frente8">Mil Desculpas!</div>
+            <div class="verso8">Sinto muito. Espero poder consertar meu erro com carinho e sinceridade.</div>
+        </div>
+    </div>
+    <br>
+
+    <div class="container">
+        <div class="cartao motivacional">
+            <div class="frente9">Você consegue!</div>
+            <div class="verso9">Você é mais forte do que imagina. Continue acreditando em você!</div>
+        </div>
+    </div>
+    <br>
+
+    <div class="container">
+        <div class="cartao junina">
+            <div class="frente10">Feliz São João!</div>
+            <div class="verso10">Pula fogueira, arraiá e alegria no ar! Viva a Festa Junina!</div>
+        </div>
+    </div>
+    <br>
+
+</div>
+
+<script>
+    document.querySelectorAll('.cartao').forEach(cartao => {
+        cartao.addEventListener('click', () => {
+            cartao.classList.toggle('virado')
+        })
+    })
+</script>
+
+</body>
+</html>

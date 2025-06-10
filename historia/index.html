@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Camila Loures - PASSANDO a NOITE no PARQUE DE DIVERSÕES MISTERIOSO</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #111;
+            color: #fff;
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            text-align: center;
+        }
+
+        #historia {
+            max-width: 600px;
+        }
+
+        img {
+            width: 100%;
+            max-width: 400px;
+            margin-bottom: 20px;
+            border-radius: 10px;
+        }
+
+        button {
+            margin: 10px;
+            padding: 12px 20px;
+            font-size: 16px;
+            border: none;
+            border-radius: 8px;
+            background-color: #801c1c;
+            color: white;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #400d0d;
+        }
+    </style>
+</head>
+<body>
+    <div id="intro">
+        <h1>Camila Loures</h1>
+        <h2>PASSANDO a NOITE no PARQUE DE DIVERSÕES MISTERIOSO 😜😱</h2>
+        <img src="camila.png" alt="">
+        <h3>Oi gente, eu sou Camila Loures e esse é o meu, o seu, o nosso 24 horas</h3>
+        <button onclick="comecarJogo()">Começar</button>
+    </div>
+
+    <div id="historia" style="display:none;">
+        <h3>Hoje nos vamos tentar passar a noite nesse parque de diversões abandonado, devemos entrar??</h3>
+        <img src="parque.jpg" alt="Parque Misterioso">
+        <br>
+        <button onclick="escolha1('sim')">Entrar no parque</button>
+        <button onclick="escolha1('nao')">Voltar para casa</button>
+    </div>
+
+    <script>
+        function comecarJogo() {
+            document.getElementById('intro').style.display = 'none'; 
+            document.getElementById('historia').style.display = 'block'; 
+        }
+
+        // As outras funções continuam iguais
+        function escolha1(resposta) {
+            const div = document.getElementById("historia");
+            if (resposta === "sim") {
+                div.innerHTML = `
+                    <h3>Agora que entramos, precisamos decidir onde explorar primeiro. Vamos para Montanha-russa ou para a Casa dos Espelhos??</h3>
+                    <img src="escolha.png" alt="Escolha de Caminho">
+                    <br>
+                    <button onclick="escolha2('montanha')">Montanha-russa</button>
+                    <button onclick="escolha2('espelhos')">Casa dos Espelhos</button>
+                `;
+            } else {
+                div.innerHTML = `
+                    <h2>Fim Arrego 🫣</h2>
+                    <h3>É não foi dessa vez galera, aquele parque estava muito assustador, então vamos passar 24 horas em casa!</h3>
+                    <img src="casa.jpg" alt="Fim em casa">
+                `;
+            }
+        }
+
+        function escolha2(caminho) {
+            const div = document.getElementById("historia");
+            if (caminho === "montanha") {
+                div.innerHTML = `
+                    <h3>MEU DEUS PESSOAL! a montanha-russa ligou sozinha 🫨 Devemos entrar ou sair correndo??</h3>
+                    <img src="montanha.jpg" alt="Montanha-Russa Misteriosa">
+                    <br>
+                    <button onclick="escolha3('entrar')">Entrar</button>
+                    <button onclick="escolha3('correr')">Correr</button>
+                `;
+            } else {
+                div.innerHTML = `
+                    <h3>MEU DEUS ASSOMBRAÇÃO 😱 Vamos atrás ou fugimos?</h3>
+                    <img src="espelhos.jpg" alt="Casa dos Espelhos">
+                    <br>
+                    <button onclick="escolha3('investigar')">Ir Atrás</button>
+                    <button onclick="escolha3('sair')">Fugir</button>
+                `;
+            }
+        }
+
+        function escolha3(acao) {
+            const div = document.getElementById("historia");
+            let conteudo = '';
+            switch (acao) {
+                case "entrar":
+                    conteudo = `<h2>Fim Trágico 💀</h2> 
+                    <h3>Camila Loures, entra na montanha russa e vai parar nas backrooms</h3><img src="tragico.jpeg" alt="">`;
+                    break;
+                case "correr":
+                    conteudo = `<h2>Fim Sonho 😮‍💨</h2> 
+                    <h3>Camila Loures corre, tropeça e acorda na sua cama, sonhando com o proximo 24 horas</h3><img src="sonho.jpg" alt="">`;
+                    break;
+                case "investigar":
+                    conteudo = `<h2>Fim Triste 😞</h2>
+                    <h3>Uma figura misteriosa sequestra Camila Loures e ninguém nunca mais a vê</h3><img src="sequestro.jpg" alt="">`;
+                    break;
+                case "sair":
+                    conteudo = `<h2>Fim Incrível 🤩</h2>
+                    <h3>Camila Loures foge e encontra seus amigos a esperando com sua nova placa de 10 milhões</h3><img src="amigos.jpg" alt=""">`;
+                    break;
+            }
+            div.innerHTML = conteudo;
+        }
+    </script>
+</body>
+</html>
