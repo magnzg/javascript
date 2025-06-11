@@ -1,0 +1,137 @@
+/* Importando a fonte Poetsen One do Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poetsen+One&display=swap');
+
+/* Resetando as configurações padrão do navegador */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poetsen One', sans-serif;
+}
+
+/* Estilizando o corpo da página */
+body {
+    background-color: #e9f9ec; 
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Container principal do quiz */
+.container {
+    background-color: white;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(100, 180, 100, 0.2); 
+    max-width: 600px;
+    width: 90%;
+}
+
+/* Estilo do título */
+h1 {
+    text-align: center;
+    color: #4caf50; 
+    margin-bottom: 2rem;
+}
+
+/* Estilo do placar */
+#placar {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 2rem;
+    padding: 1rem;
+    background-color: #e0f2f1; 
+    border-radius: 5px;
+    font-size: 1.1rem;
+}
+
+/* Estilo dos números do placar */
+#placar span {
+    font-weight: bold;
+}
+
+/* Cor do número de acertos */
+#acertos {
+    color: #2e7d32; 
+}
+
+/* Cor do número de erros */
+#erros {
+    color: #c62828; 
+}
+
+/* Estilo da pergunta */
+#pergunta {
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+    color: #2e7d32;
+}
+
+/* Estilo das opções de resposta */
+.opcao {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    background-color: #f1f8e9; 
+    border: 2px solid #c5e1a5;
+    border-radius: 5px;
+    cursor: pointer;
+    color: #2e7d32;
+    transition: all 0.3s;
+}
+
+/* Efeito quando passar o mouse sobre a opção */
+.opcao:hover {
+    background-color: #dcedc8;
+}
+
+/* Estilo da opção selecionada */
+.opcao.selecionada {
+    background-color: #81c784; 
+    color: white;
+    border-color: #66bb6a;
+}
+
+/* Estilo dos botões */
+button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin-top: 1rem;
+    background-color: #4caf50; 
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #388e3c;
+}
+
+/* Classe para esconder elementos */
+.esconder {
+    display: none;
+}
+
+/* Estilo da tela de pontuação final */
+#pontuacao {
+    text-align: center;
+}
+
+/* Estilo do título da pontuação final */
+#pontuacao h2 {
+    color: #4caf50;
+    margin-bottom: 1rem;
+}
+
+/* Estilo do texto da pontuação final */
+#pontuacao p {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    color: #4e4e4e;
+}

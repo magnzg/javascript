@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Quiz - Ciências da Natureza</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>QUIZ - CIÊNCIAS DA NATUREZA</h1>
+
+    <div id="placar">
+      <span>Acertos: <span id="acertos">0</span></span>
+      <span>Erros: <span id="erros">0</span></span>
+    </div>
+
+    <div id="quiz">
+      <div id="pergunta"></div>
+      <div id="opcoes"></div>
+      <button id="proxima" disabled>Próxima Pergunta</button>
+    </div>
+
+    <div id="pontuacao" class="esconder">
+      <h2>Resultado Final</h2>
+      <p>Você acertou <span id="valor-pontuacao">0</span> de <span id="total-perguntas">0</span> perguntas!</p>
+      <button id="reiniciar">Reiniciar Quiz</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
