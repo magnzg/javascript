@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Jukebox</h1>
+    <p>Selecione como está se sentindo e ouça uma música</p>
+
+    <button onclick="tocar('feliz')">Feliz</button>
+    <button onclick="tocar('triste')">Triste</button>
+    <button onclick="tocar('aventura')">Aventureira</button>
+    <button onclick="tocar('amor')">Romântica</button>
+    <button onclick="tocar('terror')">Com Medo</button>
+    <button onclick="tocar('calma')">Calma</button>
+    <button onclick="tocar('animacao')">Animada</button>
+    <button onclick="tocar('suspense')">Suspense</button>
+    <button onclick="parar()">Parar</button>
+
+    <div id="imagem" style="margin-top: 30px;">
+        <img src="" alt="" id="foto" width="300" style="display: none;">
+    </div>
+
+    <h3 id="nomeM" style="display: none;"></h3>
+
+    <audio src="" id="audio" controls style="margin-top: 20px; display: none;"></audio>
+
+    <script>
+        function tocar(tipo) {
+            const audio = document.getElementById("audio")
+            const foto = document.getElementById("foto")
+            const nomeM = document.getElementById("nomeM")
+
+            let musica = ""
+            let imagem = ""
+            let cor = ""
+            let texto = ""
+
+            if (tipo == "feliz") {
+                musica = "feliz.mp3"
+                imagem = "feliz.png"
+                cor = "#FFF5A5"
+                texto = "Efeito Sonoro - Crianças Felizes"
+            }
+
+             if (tipo == "triste") {
+                musica = "triste.mp3"
+                imagem = "triste.png"
+                cor = "#A9CCE3"
+                texto = "Efeito Sonoro - Triste"
+            }
+
+             if (tipo == "aventura") {
+                musica = "aventura.mp3"
+                imagem = "aventura.png"
+                cor = "#FFD1A6"
+                texto = "Abertura Dora Aventureira"
+            }
+
+             if (tipo == "amor") {
+                musica = "amor.mp3"
+                imagem = "amor.png"
+                cor = "#FFB7D5"
+                texto = "Careless Whisper - George Michael"
+            }
+
+             if (tipo == "terror") {
+                musica = "terror.mp3"
+                imagem = "terror.png"
+                cor = "#D5DBDB"
+                texto = "Efeito Sonoro - Terror"
+            }
+
+             if (tipo == "calma") {
+                musica = "calmo.mp3"
+                imagem = "calmo.png"
+                cor = "#AEDFF7"
+                texto = "Som Calmo e Suave"
+            }
+
+             if (tipo == "animacao") {
+                musica = "animado.mp3"
+                imagem = "animado.png"
+                cor = "#FFB085"
+                texto = "Efeito Sonoro - Som Animado"
+            }
+
+             if (tipo == "suspense") {
+                musica = "suspense.mp3"
+                imagem = "suspense.png"
+                cor = "#D4F7A3"
+                texto = "Efeito Sonoro - Som de Suspense"
+            }
+
+            document.body.style.backgroundColor = cor
+            foto.src = imagem
+            foto.style.display = "block"
+
+            audio.src = musica
+            audio.play()
+            audio.style.display = "block"
+
+            nomeM.textContent = texto
+            nomeM.style.display = "block"
+        }
+
+        function parar() {
+            const audio = document.getElementById("audio")
+            audio.pause()
+            audio.currentTime = 0
+            audio.style.display = "none"
+
+            const foto = document.getElementById("foto")
+            foto.style.display = "none"
+
+            document.body.style.backgroundColor = "#fff"
+
+            const nomeM = document.getElementById("nomeM")
+            nomeM.style.display = "none"
+        }
+    </script>
+</body>
+</html>
