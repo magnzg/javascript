@@ -6,30 +6,63 @@
     <title>Document</title>
     <style>
         body {
-            text-align: center;
+        text-align: center;
+        background-color: #f2c0e3;
+        font-family: Arial, sans-serif;
+        background-size: cover;
+        background-attachment: fixed;
         }
+
+        h1 {
+            font-size: 2.5em;
+            color: #541a2a;
+            margin-bottom: 20px;
+        }
+
         .container {
             display: flex;
             justify-content: center;
             gap: 40px;
             margin-bottom: 20px;
+
         }
+
         .box {
-            background-color: white;
+            background-color: #fae8f6;
             border-radius: 10px;
             padding: 10px;
-            box-shadow: 0px 4px 8px black;
+            box-shadow: 0px 4px 8px rgba(0,0,0,0.3);
+            width: 150px;
+            border: 2px solid #541a2a;
         }
+
+        .label {
+            font-weight: bold;
+            font-size: 1.2em;
+            margin-bottom: 8px;
+            color: #541a2a;
+        }
+
         .controle {
             display: flex;
             align-items: center;
             justify-content: center;
             margin-top: 10px;
         }
+
         .controle button {
             margin: 0 10px;
             padding: 5px 10px;
+            background-color: #f2c0e3;
+            border: 1px solid #541a2a;
+            border-radius: 5px;
+            cursor: pointer;
         }
+
+        .controle button:hover {
+            background-color: #f2c0e3;
+        }
+
         #avatar {
             display: flex;
             flex-direction: column;
@@ -37,14 +70,27 @@
             justify-content: center;
             width: 300px;
             gap: 10px;
+            background-color: #fae8f6;
+            border: 2px dashed #541a2a;
+            border-radius: 15px;
+            padding: 10px;
+            margin: 0 auto;
         }
+
         #avatar img {
-            width: 200px;
+            width: 180px;
             height: auto;
         }
-        .box img {
-            width: 130px;
-            height: 100px;
+
+        button#baixar-avatar,
+        button#baixarAvatar {
+            margin-top: 30px;
+            padding: 8px 16px;
+            font-size: 1em;
+            background-color: #f2c0e3;
+            border: 2px solid #541a2a;
+            border-radius: 8px;
+            cursor: pointer;
         }
     </style>
 </head>
